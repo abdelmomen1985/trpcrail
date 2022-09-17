@@ -3,9 +3,9 @@
  * This is an example router, you can delete this file and then update `../pages/api/trpc/[trpc].tsx`
  */
 
+import { TRPCError } from '@trpc/server';
 import { createRouter } from 'server/createRouter';
 import { z } from 'zod';
-import { TRPCError } from '@trpc/server';
 
 export const postRouter = createRouter()
   // create
@@ -47,6 +47,7 @@ export const postRouter = createRouter()
           id: true,
           title: true,
           text: true,
+          viewed: true,
         },
       });
       if (!post) {
